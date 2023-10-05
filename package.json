@@ -4,6 +4,7 @@
   "description": "express server exe",
   "main": "dist/server.js",
   "scripts": {
+    "start": "node .",
     "dev": "nodemon .",
     "ts": "tsc -w"
   },
