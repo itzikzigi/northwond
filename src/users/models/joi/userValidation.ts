@@ -3,12 +3,11 @@ import UserInterface from "../../interfaces/UserInterface";
 
 const userValidation = (user: UserInterface) => {
   const schema = Joi.object({
-    _id: Joi.string().allow(""),
     email: Joi.string()
       .ruleset.pattern(
         /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
       )
-      .rule({ message: 'user "mail" mast be a valid mail' })
+      .rule({ message: 'user "mail" must be a valid mail' })
       .required(),
     password: Joi.string()
       .ruleset.regex(

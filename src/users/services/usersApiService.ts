@@ -50,7 +50,7 @@ export const register = async (user: UserInterface): UserResult => {
     const userRegistered = users.find(
       (userInDB: Record<string, unknown>) => userInDB.email === user.email
     );
-    if (userRegistered) throw new Error("This user is allready registered!");
+    if (userRegistered) throw new Error("This user is already registered!");
 
     user._id = uuid1();
     user.password = generateUserPassword(user.password);
